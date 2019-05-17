@@ -13,8 +13,8 @@ The main aim of this project is to build a game that puts every human brain in t
 9. stored the card in an array after clicking on it. If the card value equals to 2 then the count of moves will be increased. And also checks for equality, If the two cards equal then color of the cards changes. Similarly if unmatched then color changes to red.
 10. The timer initialized 0 minutes and 0sec initially whenever you clicked the card.
 11. Rating depends on number of moves in the starCount function.
-      -If the number of moves<=10 the star count is 3.
-      -If the number of moves>10 and moves<=20 the star count is 2.
-      -If the number of moves>20 the star count is 1.
+  - If the number of moves<=10 the star count is 3.
+  - If the number of moves>10 and moves<=20 the star count is 2.
+  - If the number of moves>20 the star count is 1.
 12. If all the cards get matched, The game ended with congratulatory message. The congratulatory message includes the star rating, moves count, time to complete and a restart button.
 13. If the user clicks the restart button, The game starts again with initial time and move counter.
