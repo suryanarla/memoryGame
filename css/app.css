@@ -1,0 +1,229 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff url('../img/geometry2.png');
+  /* Background pattern from Subtle Patterns */
+  font-family: 'Coda', cursive;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*Congratulations popUp*/
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+}
+
+/*Pop up content*/
+.modal-content {
+  background-color: #fefefe;
+  margin: 1% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+}
+
+/*Pop Up Body*/
+#modal-body {
+  border: 1px solid #2adc32;
+  padding: 1%;
+}
+
+/*Pop up heading*/
+.modal-content>h2 {
+  color: #2adc32;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px #ddd;
+}
+
+/*Restart Button*/
+#button {
+  background: #11a017;
+  border: 1px solid #0e6f12;
+  box-shadow: 3px 3px 3px #ddd;
+  padding: 1%;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 1%;
+}
+
+#button:hover {
+  background: #acbb1e;
+  border: 1px solid #97a415;
+}
+
+.show {
+  display: block;
+}
+
+/*For hiding content*/
+.hide {
+  display: none;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+/*Star difference*/
+.star {
+  color: yellow;
+  text-shadow: 1px 1px 1px #000;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+.deck {
+  width: 660px;
+  min-height: 680px;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em;
+}
+
+.deck .card {
+  height: 125px;
+  width: 125px;
+  background: #2e3d49;
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+  transform: rotateY(0);
+  background: #02b3e4;
+  cursor: default;
+}
+
+.deck .card.show {
+  font-size: 33px;
+}
+
+.deck .card.match {
+  cursor: default;
+  background: #02ccba;
+  font-size: 33px;
+}
+
+.deck .card.unmatch {
+  background: #ed6c50;
+}
+
+.deck .card.disabled {
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+.score-panel {
+  text-align: left;
+  width: 345px;
+  margin-bottom: 10px;
+}
+
+.score-panel .stars {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+}
+
+.score-panel .restart {
+  float: right;
+  cursor: pointer;
+}
+
+/* Small scale devices */
+@media only screen and (min-width:320px) and (max-width:480px) {
+  .deck {
+    width: 90%;
+    min-height: 0;
+    height: auto;
+    padding: 1em;
+    margin: 1% auto;
+  }
+
+  .deck .card {
+    height: 90px;
+    width: 23%;
+    margin: 0 0 1% 0;
+  }
+  .score-panel {
+  text-align: left;
+  width: 305px;
+  margin-bottom: 10px;
+}
+}
+
+/*Medium Scale devices*/
+@media only screen and (min-width:481px) and (max-width:686px) {
+  .deck {
+    width: 90%;
+    min-height: 0;
+    height: auto;
+    padding: 1em;
+  }
+
+  .deck .card {
+    height: 100px;
+    width: 23%;
+    margin: 0 0 1% 0;
+  }
+
+  .modal {
+    width: 80%;
+    height: auto;
+  }
+}
